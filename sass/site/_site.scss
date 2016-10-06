@@ -3,9 +3,17 @@
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-@import "primary/posts-and-pages";
 
-/*--------------------------------------------------------------
-## Comments
---------------------------------------------------------------*/
+@import "primary/header";
+@import "primary/posts-and-pages";
 @import "primary/comments";
+@import "primary/footer";
+
+
+body>#page {
+	@include basewide;
+	@include basebg;
+	#masthead, #content, #colophon {
+		padding:0 30px;
+	}
+}

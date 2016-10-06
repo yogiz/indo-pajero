@@ -22,3 +22,58 @@
 @mixin clearfix-after() {
 	clear: both;
 }
+
+
+@mixin basewide {
+	max-width: 950px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+}
+
+@mixin basebg {
+	background: rgba(32,32,32,1);
+	background: -moz-linear-gradient(left, rgba(32,32,32,1) 0%, rgba(56,56,56,1) 45%, rgba(56,56,56,1) 55%, rgba(32,32,32,1) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(32,32,32,1)), color-stop(45%, rgba(56,56,56,1)), color-stop(55%, rgba(56,56,56,1)), color-stop(100%, rgba(32,32,32,1)));
+	background: -webkit-linear-gradient(left, rgba(32,32,32,1) 0%, rgba(56,56,56,1) 45%, rgba(56,56,56,1) 55%, rgba(32,32,32,1) 100%);
+	background: -o-linear-gradient(left, rgba(32,32,32,1) 0%, rgba(56,56,56,1) 45%, rgba(56,56,56,1) 55%, rgba(32,32,32,1) 100%);
+	background: -ms-linear-gradient(left, rgba(32,32,32,1) 0%, rgba(56,56,56,1) 45%, rgba(56,56,56,1) 55%, rgba(32,32,32,1) 100%);
+	background: linear-gradient(to right, rgba(32,32,32,1) 0%, rgba(56,56,56,1) 45%, rgba(56,56,56,1) 55%, rgba(32,32,32,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#202020', endColorstr='#202020', GradientType=1 );
+}
+
+
+//media queri
+
+$breakpoints: (
+    "phone":        400px,
+    "phone-wide":   480px,
+    "phablet":      560px,
+    "tablet-small": 640px,
+    "tablet":       768px,
+    "tablet-wide":  1024px,
+    "desktop":      1248px,
+    "desktop-wide": 1440px
+);
+
+@mixin mq($width, $type: min) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        @if $type == max {
+            $width: $width - 1px;
+        }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}
+
+//     cara pakek
+// .site-header {
+//     padding: 2rem;
+//     font-size: 1.8rem;
+//     @include mq('tablet-wide') {
+//         padding-top: 4rem;
+//         font-size: 2.4rem;
+//     }
+// }

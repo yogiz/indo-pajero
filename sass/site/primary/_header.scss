@@ -1,0 +1,48 @@
+#masthead {
+	height : 105px;
+	padding-top:30px !important;
+	.site-branding {
+		height: 65px;
+	}
+	.site-logo {
+		display: inline-block;
+	}
+	.main-navigation{
+		display: inline-block;
+	    height: 100%;
+	    float: right;
+	    vertical-align: top;
+	    >div{
+    	    display: block;
+		    margin-top: 30px;
+	        margin-right: 40px;
+	    }
+		ul{
+		    margin: 0;
+		    padding: 0;
+		    list-style: none;
+
+		    >li{
+		    	display: inline-block;
+		    	>a{
+		    		border-left: 2px solid $color__text-main;
+		    		padding: 0 15px;
+		    	}
+	    		&:nth-child(1){
+	    			a{border-left:0px;}
+	    		}
+
+		    }
+		    a {
+		    	text-decoration: none;
+		    	color:$color__text-main;
+		    	font-weight: 500;
+		    	font-size: 1.4rem;
+		    }
+		}
+	}
+	.border-bawah>div{
+		border-bottom:1px solid #656565;
+	}
+}
+
