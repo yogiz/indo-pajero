@@ -134,6 +134,50 @@ $wp_customize ->add_control( new WP_Customize_Image_Control( $wp_customize, 'the
 }
 add_action('customize_register', 'themeslug_theme_customizer');
 
+//admin css
+function admin_style() {
+  	wp_enqueue_style('admin-styles', get_template_directory_uri().'/admin.css');
+}
+add_action('admin_enqueue_scripts', 'admin_style');
+
+
+
+//excerpt 
+
+function panjero_excerpt_more( $more, $req_form = false ) {
+
+	global $post;
+	// edit here if you like
+	return '<div class="exc"><a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'panjero' ) . esc_attr( get_the_title( $post->ID ) ).'">'. __( 'More...', 'panjero' ) .'</a></div>';
+}
+add_filter( 'excerpt_more', 'panjero_excerpt_more' );
+
+
+
+
+// CHANGE EXCERPT LENGTH FOR DIFFERENT POST TYPES
+ 
+function isacustom_excerpt_length($length) {
+	global $post;
+	if ($post->post_type == 'event')
+		return 20;
+	else if ($post->post_type == 'products')
+		return 65;
+	else if ($post->post_type == 'testimonial')
+		return 75;
+	else
+		return 95;
+}
+add_filter('excerpt_length', 'isacustom_excerpt_length');
+
+/**
+ * Custom file.
+ */
+require_once get_template_directory() . '/func/cpt.php';
+
+require_once get_template_directory() . '/func/opt.php';
+
+
 
 
 /**

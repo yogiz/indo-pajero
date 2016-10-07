@@ -41,3 +41,161 @@
     }
 
 }
+
+/* 
+------------ frontpage --------------------
+ */
+
+ // header
+
+.head-cell {
+	position: relative;
+    height: 500px;
+    .title{
+	    font-weight: 900;
+	    font-size: 40px;
+	    line-height: 32px;
+	    width: 270px;
+	    padding-bottom: 5px;
+	    border-bottom: 1px solid rgba(255, 255, 255, 0.42);
+	    position: absolute;
+	    z-index: 9;
+	    top: 140px;
+	    left: 40px;
+    }
+    .subtitle {
+	    width: 250px;
+	    font-weight: 300;
+	    font-size: 27px;
+	    line-height: 27px;
+	    position: absolute;
+	    z-index: 9;
+	    top: 186px;
+	    left: 40px;
+    }
+    .image {
+	    position: absolute;
+	    top: 0;
+	    right: 0;
+	    img {
+    	    height: 450px;
+		    width: auto;
+	    }
+    }
+    .border-bawah {
+	    position: absolute;
+	    top: 490px;
+    }
+}
+
+// page umum
+
+.page-cell {
+	// height:500px;
+	margin-top:20px;
+	.container {
+		height: 100%;
+		margin-bottom: 30px;
+		.top-container {
+		    font-size: 25px;
+		    font-weight: 500;
+		    padding-top: 20px;
+	        margin-bottom: 20px;
+		}
+		.content {
+		    font-weight: 300;
+    		font-size: 15px;
+    		.exc {margin-bottom:0;}
+    		.excerpt-read-more{
+			    font-weight: 500;
+			    font-size: 20px;
+			    text-decoration: none;
+			    color: white;
+			}
+		}
+	}
+}
+
+.about {
+	.ab-con{
+		padding:0 55px;
+	}
+	.content {
+	    display: inline-block;
+	    vertical-align: top;
+	    width: 55%;
+	    text-align: right;
+	    height: 273px;
+    	p {margin-top:0;}
+	}
+	.image {
+	    display: inline-block;
+	    width: 44%;
+	    vertical-align: top;
+	    padding-left: 9%;
+	    height: 273px;
+	    overflow: hidden;
+	    img{
+	    	max-width: none;
+		    width: auto;
+		    height: 273px;
+	    }
+	}
+	.content {
+
+
+	}
+}
+.galery {
+	.im-con{
+		padding:0 65px;
+	    text-align: center;
+		.image {
+		    display: inline-block;
+		    width: 138px;
+		    margin: 3px 5px;
+		}
+	}
+}
+
+.event {
+	.ev-con{
+		text-align: center;
+		padding:0 50px;
+		.con-ev{
+			display: inline-block;
+			width: 49%;
+			text-align:left;
+			.title {
+				width: 100%;
+			}
+			.image {
+				display: inline-block;
+				width: 40%;
+				vertical-align: top;
+				height: 280px;
+				overflow: hidden;
+				img {
+					height: 100%;
+					width: auto;
+					max-width: none;
+				}
+			}
+			.content {
+				display: inline-block;
+				width: 58%;
+				vertical-align: top;
+				padding-left:20px;
+				p {margin-top:0;}
+				.title {
+				    font-size: 25px;
+				    font-weight: 500;
+				}
+				.date {
+					font-size: 20px;
+				    // font-weight: 500;
+				}
+			}
+		}
+	}
+}
